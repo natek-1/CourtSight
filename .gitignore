@@ -209,7 +209,7 @@ __marimo__/
 
 # data
 input_videos/
-
+dataset/
 
 #model
 *.pt
