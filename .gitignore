@@ -209,3 +209,11 @@ __marimo__/
 
 # data
 input_videos/
+
+
+#model
+*.pt
+
+
+# runs
+runs/

@@ -124,6 +124,26 @@ When you run the pipeline the repository will produce images and CSVs in the `ou
 * Improve ball detection using a separate ball-focused detector or optical-flow-based tracker.
 * Add support for multi-camera synchronization for full-court 3D reconstruction.
 * Add a web UI for interactive playback and stat exploration.
+---
+
+## Citations
+
+Dataset to finetune YOLO model
+```
+@misc{ basketball-players-fy4c2-vfsuv_dataset,
+title = { Basketball Players Dataset },
+type = { Open Source Dataset },
+author = { workspace },
+howpublished = { \url{ https://universe.roboflow.com/workspace-5ujvu/basketball-players-fy4c2-vfsuv } },
+url = { https://universe.roboflow.com/workspace-5ujvu/basketball-players-fy4c2-vfsuv },
+journal = { Roboflow Universe },
+publisher = { Roboflow },
+year = { 2024 },
+month = { dec },
+note = { visited on 2025-09-24 },
+}
+```
+
 
 ---
 
