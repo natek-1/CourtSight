@@ -1,11 +1,26 @@
 
+import numpy as np
 
 import cv2
-
 
 from utils.bbox_utils import get_bbox_center, get_bbox_width
 
 
+def draw_triangle(frame, bbox, color):
+    _,y,_,_ = bbox
+    y = int(y)
+    x,_ = get_bbox_center(bbox)
+    
+    triangle_points = np.array([
+        [x, y],
+        [x-10, y-20],
+        [x+10, y-20]
+    ])
+
+    cv2.drawContours(frame, [triangle_points], 0, color, cv2.FILLED)
+    cv2.drawContours(frame, [triangle_points], 0, (0,0,0), 2)
+    
+    return frame
 
 def draw_ellipse(frame, bbox, color, thickness=2, track_id=None, ):
     _,_,_,y2=bbox

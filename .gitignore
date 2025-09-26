@@ -218,3 +218,7 @@ dataset/
 # runs
 Basketball-Players-25/
 runs/
+output_videos/
+
+# caching
+stubs/
