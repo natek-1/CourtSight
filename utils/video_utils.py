@@ -14,16 +14,16 @@ def read_video(video_path: str):
         
     return frames
 
-def save_video(frames, output_path, fps=30.0):
-    os.path.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+def save_video(frames, video_path, fps=30):
+    if not os.path.exists(os.path.dirname(video_path)):
+        os.mkdir(os.path.dirname(video_path))
     
-    fourcc = cv2.VideoWriter.fourcc(*"XVID")
-    out = cv2.VideoWriter(output_path, fourcc, fps, (frames[0].shape[1], frames[0].shape[0]))
+    height, width, channels = frames[0].shape
     
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    out = cv2.VideoWriter(video_path, fourcc, fps, (width, height))
     for frame in frames:
         out.write(frame)
-    out.release()
-    
-    
-    
-    
+        
+    out.release()    
