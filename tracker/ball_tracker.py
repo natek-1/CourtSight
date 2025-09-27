@@ -19,13 +19,15 @@ class BallTracker:
         return detections
 
     def get_object_track(self, frames, batch_size=32, conf=0.5, stub_path=None
-                         , read_from_stub=False):
+                         , read_from_stub=False, detections=None):
     
         tracks = read_stub(stub_path, read_from_stub)
 
-        if tracks is not None and len(tracks) == len(frames): return tracks
+        if tracks is not None and len(tracks) == len(frames): return tracks, None
         
-        detections = self.detect_frames(frames, batch_size=batch_size, conf=conf)
+        if detections is None:
+            detections = self.detect_frames(frames, batch_size=batch_size, conf=conf)
+            
         tracks = []
         
         for frame_num, detection in enumerate(detections):
@@ -52,4 +54,4 @@ class BallTracker:
         
         if stub_path is not None: save_stub(stub_path, tracks)
 
-        return tracks
+        return tracks, detections
