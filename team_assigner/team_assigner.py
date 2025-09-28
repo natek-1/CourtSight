@@ -11,7 +11,7 @@ class TeamAssigner:
     def __init__(self,
                  team_1_class="white shirt",
                  team_2_class="dark shirt",
-                 device="mps"):
+                 device="cpu"):
     
         self.team_colors = {}
         self.player_dict = {}
@@ -47,12 +47,12 @@ class TeamAssigner:
 
     def get_player_team(self, frame, bbox, player_id):
         
-        if player_id in self.player_team_id: return self.get_player_team[player_id]
+        if player_id in self.player_dict: return self.player_dict[player_id]
         
         player_color = self.get_player_color(frame, bbox)
         team_id = 1 if player_color == self.team_1_class else 2
         
-        self.get_player_team[player_id] = team_id
+        self.player_dict[player_id] = team_id
         return team_id
 
     
@@ -72,7 +72,7 @@ class TeamAssigner:
                 self.player_dict = {}
             
             
-            for player_id, track in player_track:
+            for player_id, track in player_track.items():
                 team = self.get_player_team(
                     frames[frame_num],
                     track["bbox"],
