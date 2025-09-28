@@ -221,3 +221,7 @@ runs/
 NBA-Game-Detection-1/
 NBA-ball-detection-5/
 YOLOv8/
+output_videos
+
+# stubs
+stubs/

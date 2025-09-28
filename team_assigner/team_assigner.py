@@ -10,7 +10,7 @@ class TeamAssigner:
     
     def __init__(self,
                  team_1_class="white shirt",
-                 team_2_class="dark shirt",
+                 team_2_class="blue shirt",
                  device="cpu"):
     
         self.team_colors = {}
@@ -68,7 +68,7 @@ class TeamAssigner:
         for frame_num, player_track in enumerate(player_tracks):
             player_assigment.append({})
             
-            if frame_num % 50 == 0: # allow for correction (no caching)
+            if frame_num % 30 == 0: # allow for correction (some caching)
                 self.player_dict = {}
             
             
