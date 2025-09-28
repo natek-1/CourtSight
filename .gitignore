@@ -218,7 +218,6 @@ dataset/
 # runs
 Basketball-Players-25/
 runs/
-output_videos/
-
-# caching
-stubs/
+NBA-Game-Detection-1/
+NBA-ball-detection-5/
+YOLOv8/
